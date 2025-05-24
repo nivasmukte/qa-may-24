@@ -1,0 +1,44 @@
+package org.example;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+class expenses {
+    int dinner;
+    int breakFast;
+    int carRental;
+    int lunch;
+
+    expenses(int dinner,int breakFast,int carRental){
+        this.dinner=dinner;
+        this.breakFast=breakFast;
+        this.carRental=carRental;
+    }
+    expenses(int dinner,int breakFast,int carRental,int lunch){
+        this.dinner=dinner;
+        this.breakFast=breakFast;
+        this.carRental=carRental;
+        this.lunch=lunch;
+    }
+    public static void main(String[] args) {
+        expenses e = new expenses(1000,2000,3000);
+        expenses e1 = new expenses(1000,2000,3000,1000);
+        System.out.println("mealExpenses are : "+e.mealExpenses(e.dinner,e.breakFast));
+        System.out.println("total expenses are : "+ e.totalExpense(e.dinner,e.breakFast,e.carRental));
+        System.out.println("mealExpenses are : "+e1.mealExpenses(e1.dinner,e1.breakFast,e1.lunch));
+        System.out.println("total expenses are : "+ e1.totalExpense(e1.dinner,e1.breakFast,e1.carRental,e1.lunch));
+
+
+    }
+    public int mealExpenses(int dinner,int breakFast){
+        return dinner+breakFast;
+    }
+    public int totalExpense(int dinner,int breakFast,int carRental){
+        return dinner+breakFast+carRental;
+    }
+    public int mealExpenses(int dinner,int breakFast,int lunch){
+        return dinner+breakFast+lunch;
+    }
+    public int totalExpense(int dinner,int breakFast,int carRental,int lunch){
+        return dinner+breakFast+carRental+lunch;
+    }
+}
